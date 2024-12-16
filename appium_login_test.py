@@ -161,6 +161,8 @@ class TestLogin(unittest.TestCase):
             )
         )
         elen.click()
+        ## 5초를 기다리는데 5초안에 웹페이지를 load 하면 바로 넘어가도록
+        self.driver.implicitly_wait(5)
 
     @classmethod
     def tearDownClass(cls):
