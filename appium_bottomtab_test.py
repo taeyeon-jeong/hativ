@@ -78,18 +78,6 @@ class TestBottomTab(unittest.TestCase):
         actions.perform()
         time.sleep(2)
  
-    # 다음 테스트를 위해 다시 2번째 건강기록 탭으로 이동
-    def test_aj_tab2(self):
-        actions = ActionChains(self.driver)
-        actions.w3c_actions = ActionBuilder(
-            self.driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch")
-        )
-        actions.w3c_actions.pointer_action.move_to_location(267, 2024)
-        actions.w3c_actions.pointer_action.pointer_down()
-        actions.w3c_actions.pointer_action.pause(0.1)
-        actions.w3c_actions.pointer_action.release()
-        actions.perform()
- 
     @classmethod
     def tearDownClass(cls):
         pass  # 여기를 비워두면 테스트 후 driver를 종료하지 않음
