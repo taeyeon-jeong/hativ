@@ -44,7 +44,7 @@ class TestViewEditClick(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 메인 화면에서 아래로 스크롤
     def test_al_scroll(self):
@@ -57,7 +57,7 @@ class TestViewEditClick(unittest.TestCase):
         actions.w3c_actions.pointer_action.move_to_location(371, 350)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 메인 화면에서 화면 편집 선택
     def test_am_editclick(self):
@@ -68,7 +68,7 @@ class TestViewEditClick(unittest.TestCase):
             )
         )
         el_click.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 화면 편집 화면에서 혈압 토글 버튼 off로 변경
     def test_an_edittoggle1(self):
@@ -80,7 +80,7 @@ class TestViewEditClick(unittest.TestCase):
         #     )
         # )
         # el_toggle1.click()
-        # time.sleep(1)
+        # self.driver.implicitly_wait(5)
         actions = ActionChains(self.driver)
         actions.w3c_actions = ActionBuilder(
             self.driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch")
@@ -90,7 +90,7 @@ class TestViewEditClick(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 화면 편집 화면에서 체온 토글 버튼 off로 변경
     def test_ao_edittoggle2(self):
@@ -102,7 +102,7 @@ class TestViewEditClick(unittest.TestCase):
         #     )
         # )
         # el_toggle1.click()
-        # time.sleep(1)
+        # self.driver.implicitly_wait(5)
         actions = ActionChains(self.driver)
         actions.w3c_actions = ActionBuilder(
             self.driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch")
@@ -112,7 +112,7 @@ class TestViewEditClick(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 화면 편집 화면에서 뒤로가기 선택하여 메인화면(홈)으로 전환
     def test_ap_backmain(self):
@@ -133,7 +133,8 @@ class TestViewEditClick(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
+        time.sleep(2)
  
     @classmethod
     def tearDownClass(cls):

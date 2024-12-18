@@ -49,7 +49,8 @@ class TestBottomTab(unittest.TestCase):
         actions.w3c_actions.pointer_action.release()
         # 위에서 정의한 모든 터치 동작을 실행행
         actions.perform()
-        # 마지막 코드 실행 후 2초간 대기
+        self.driver.implicitly_wait(5)
+        # 마지막 코드 실행 후 2초간 대기 - 생성 후 확인을 위해해
         time.sleep(2)
  
     # 하단 3번째 탭 커뮤니티 선택
@@ -63,6 +64,7 @@ class TestBottomTab(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
+        self.driver.implicitly_wait(5)
         time.sleep(4)
  
     # 하단 5번째 탭 마이페이지 선택(하티브몰은 패스)
@@ -76,6 +78,7 @@ class TestBottomTab(unittest.TestCase):
         actions.w3c_actions.pointer_action.pause(0.1)
         actions.w3c_actions.pointer_action.release()
         actions.perform()
+        self.driver.implicitly_wait(5)
         time.sleep(2)
  
     @classmethod

@@ -44,7 +44,7 @@ class TestBloodPressure(unittest.TestCase):
  
     # 건강기록에서 상단 혈압 탭 선택
     def test_ap_pressuretab(self):
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
         el_pressure = self.wait.until(
             lambda x: x.find_element(
                 AppiumBy.ANDROID_UIAUTOMATOR,
@@ -53,11 +53,11 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_pressure.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압에서 혈압 추가(입력) 버튼 클릭
     def test_aq_pressureaddb(self):
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
         el_add = self.wait.until(
             lambda x: x.find_element(
                 AppiumBy.ANDROID_UIAUTOMATOR,
@@ -65,7 +65,7 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_add.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압 추가에서 최고 입력 부분 선택 후 120 입력
     def test_ar_max(self):
@@ -77,7 +77,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_max.click()
         el_max.send_keys("120")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압 추가에서 최저 입력 부분 선택 후 80 입력
     def test_as_min(self):
@@ -89,7 +89,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_min.click()
         el_min.send_keys("80")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압 추가에서 맥박 입력 부분 선택 후 85 입력
     def test_at_pulse(self):
@@ -101,7 +101,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_pulse.click()
         el_pulse.send_keys("85")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압 추가에서 메모 입력
     def test_au_memo(self):
@@ -113,7 +113,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_memo.click()
         el_memo.send_keys("120에 80 그리고 맥박 85 오늘 측정 완료")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 혈압 추가에서 저장 버튼 선택
     def test_av_save(self):
@@ -124,9 +124,9 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_save.click()
-        time.sleep(3)
+        self.driver.implicitly_wait(5)
  
-    # # 혈압 카드 목록에서 첫번째 카드 선택
+    # 혈압 카드 목록에서 첫번째 카드 선택
     def test_aw_pcard(self):
         el_pcard = self.wait.until(
             lambda x: x.find_element(
@@ -135,9 +135,10 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_pcard.click()
+        self.driver.implicitly_wait(5)
         time.sleep(2)
  
-    # # 혈압 카드 화면에서 평균 설명 부분 선택
+    # 혈압 카드 화면에서 평균 설명 부분 선택
     def test_ax_avg(self):
         el_avg = self.wait.until(
             lambda x: x.find_element(
@@ -147,11 +148,11 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_avg.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
         self.driver.back()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
-    # # 혈압 카드 화면에서 맥압 설명 부분 선택
+    # 혈압 카드 화면에서 맥압 설명 부분 선택
     def test_ay_pulsep(self):
         el_pulsep = self.wait.until(
             lambda x: x.find_element(
@@ -161,11 +162,11 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_pulsep.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
         self.driver.back()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
-    # # 혈압 카드 화면에서 심부담도 설명 부분 선택
+    # 혈압 카드 화면에서 심부담도 설명 부분 선택
     def test_az_cardiacl(self):
         el_cardiacl = self.wait.until(
             lambda x: x.find_element(
@@ -175,11 +176,11 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_cardiacl.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
         self.driver.back()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
-    # # 혈압 카드 화면에서 고혈압 기준표 설명 부분 선택
+    # 혈압 카드 화면에서 고혈압 기준표 설명 부분 선택
     def test_ba_hypertension(self):
         el_hypertension = self.wait.until(
             lambda x: x.find_element(
@@ -188,9 +189,9 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_hypertension.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
  
-    # # 혈압 카드 화면에서 고혈압 기준표 설명 닫기
+    # 혈압 카드 화면에서 고혈압 기준표 설명 닫기
     def test_bb_confirm(self):
         el_confirm = self.wait.until(
             lambda x: x.find_element(
@@ -199,9 +200,9 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_confirm.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
-    # # 추가 메뉴 선택
+    # 추가 메뉴 선택
     def test_bc_deletemenu(self):
         el_deletepressure = self.wait.until(
             lambda x: x.find_element(
@@ -210,7 +211,7 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_deletepressure.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
 
     def test_bcb_deletemenu(self):
         el_deletepressure = self.wait.until(
@@ -220,7 +221,7 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_deletepressure.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
     
      # 수정 - 최고 입력 부분 선택 후 130 입력
     def test_bcc_max(self):
@@ -232,7 +233,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_max.click()
         el_max.send_keys("130")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 수정 - 최저 입력 부분 선택 후 90 입력
     def test_bcd_min(self):
@@ -244,7 +245,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_min.click()
         el_min.send_keys("90")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 수정 - 맥박 입력 부분 선택 후 95 입력
     def test_bce_pulse(self):
@@ -256,7 +257,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_pulse.click()
         el_pulse.send_keys("95")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     # 수정 - 메모 입력
     def test_bcf_memo(self):
@@ -268,7 +269,7 @@ class TestBloodPressure(unittest.TestCase):
         )
         el_memo.click()
         el_memo.send_keys("130에 90 그리고 맥박 95 오늘 측정 수정")
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
 
     # 수정 - 저장 버튼 선택
     def test_bcg_save(self):
@@ -279,7 +280,7 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_save.click()
-        time.sleep(2)
+        self.driver.implicitly_wait(5)
     # 카드 터치 및 더보기 메뉴 한번 더 호출
         self.test_aw_pcard()
         self.test_bc_deletemenu()
@@ -293,9 +294,9 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_selectdelete.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
-    # 삭제 확인인
+    # 삭제 확인
     def test_bda_deleteconfirm(self):
         el_deleteconfirm = self.wait.until(
             lambda x: x.find_element(
@@ -305,7 +306,7 @@ class TestBloodPressure(unittest.TestCase):
             )
         )
         el_deleteconfirm.click()
-        time.sleep(1)
+        self.driver.implicitly_wait(5)
  
     @classmethod
     def tearDownClass(cls):
